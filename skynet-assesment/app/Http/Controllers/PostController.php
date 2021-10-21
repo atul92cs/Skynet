@@ -10,7 +10,7 @@ class PostController extends Controller
    public function createPost(Request $request)
    {
         $this->validate($request,[
-            'userId'=>'required|integer',
+            'userId'=>'required|numeric',
             'title'=>'required|string',
             'body'=>'required|string'
         ]);
@@ -35,8 +35,8 @@ class PostController extends Controller
    public function updatePost(Request $request)
    {
         $this->validate($request,[
-             'id'=>'required',
-            'userId'=>'required|integer',
+             'id'=>'required|numeric',
+            'userId'=>'required|numeric',
             'title'=>'required|string',
             'body'=>'required|string'
         ]);
@@ -47,6 +47,6 @@ class PostController extends Controller
         $post->title=$request->title;
         $post->body=$request->body;
         $post->save();
-        return view('postpage')->with('success','post updated');
+        return redirect('/')->with('success','post updated');
    }
 }

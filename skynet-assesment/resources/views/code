@@ -1,0 +1,25 @@
+/*let x=e.parentNode.parentNode;
+      let data={};
+      data.id=x.querySelector('.postid').innerText;
+      data.userId=x.querySelector('.postUser').innerText;
+      data.title=x.querySelector('.postTitle').innerText;
+      data.postBody=x.querySelector('.postBody').innerText;
+      selectedPosts.push(data);
+      console.log(selectedPosts);
+      for(let i=0 ; i<table.rows;i++)
+      {
+        console.log(table.rows[i]);
+       /* if(sel)
+        {
+          let data={};
+          let id=table.rows[i].querySelector('.postid').innerText;
+          let userId=rows[i].querySelector('.postUser').innerText;
+          let title=rows[i].querySelector('.postTitle').innerText;
+          let body=rows[i].querySelector('.postBody').innerText;
+          data.id=id;
+          data.userId=userId;
+          data.title=title;
+          data.body=body;
+          selectedValues.push(data);
+        }*/
+     

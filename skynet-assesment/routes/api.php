@@ -18,5 +18,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::get('/posts',function(Request $request){
-  return $posts=Post::all();
+ $posts=Post::all();
+ return ['posts'=>$posts];
 });
