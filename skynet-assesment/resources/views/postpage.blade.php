@@ -46,6 +46,8 @@
       <td class="postTitle">{{$post->title}}</td>
       <td class="postBody">{{$post->body}}</td>
       <td class="condition"><input type="checkbox" name="" class="ischecked"></td>
+      <td><button class="btn btn-danger" onclick="deletePost(this)">Delete</button></td>
+      <td><a href="/update/{{$post->id}}"><button class="btn btn-primary">Update</button></a></td>
     </tr>
   @endforeach
   </tbody>
@@ -92,6 +94,14 @@
       XLSX.writeFile(users,"users.csv");
      
       
+    }
+    deletePost=(e)=>{
+      let id=e.parentNode.parentNode.querySelector('.postid').innerText;
+      console.log(id);
+      let xhr=new XMLHttpRequest();
+      let url="/api/post/"+id;
+      xhr.open('DELETE',url,true);
+      xhr.send();
     }
 </script>
 </body>

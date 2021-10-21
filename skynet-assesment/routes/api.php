@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\Post;
+use App\Http\Controllers\PostController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -17,7 +18,9 @@ use App\Models\Post;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::get('/posts',function(Request $request){
- $posts=Post::all();
- return ['posts'=>$posts];
-});
+//Route::get('/posts',function(Request $request){
+ //$posts=Post::all();
+ //return ['posts'=>$posts];
+//});
+Route::delete('/post/{id}',[PostController::class,'deletePost']);
+
